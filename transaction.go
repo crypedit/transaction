@@ -16,3 +16,7 @@ type Transaction struct {
 	msg []byte
 	sig []byte
 }
+
+func (t Transaction) Serialize() []byte {
+	return append(t.msg, t.sig...)
+}
